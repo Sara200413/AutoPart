@@ -1,0 +1,169 @@
+/* --- HEADER PRINCIPAL (Clean Theme) --- */
+.main-header {
+  /* Fond Blanc au lieu de Noir */
+  background-color: #ffffff; 
+  /* Texte en Bleu Nuit Foncé */
+  color: #1e293b; 
+  padding: 20px 0;
+  /* Bordure grise très claire en bas */
+  border-bottom: 1px solid #e2e8f0; 
+  position: relative;
+  z-index: 100;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1e293b; /* Texte foncé */
+}
+
+.logo-icon {
+  /* On garde l'Orange (Identité de la marque) */
+  background: linear-gradient(135deg, #ff6600, #d35400);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1e293b; /* Texte foncé */
+}
+
+/* Bouton Menu */
+.menu-btn {
+  background-color: #f8fafc; /* Fond gris très clair */
+  border: 1px solid #e2e8f0; /* Bordure claire */
+  color: #475569;            /* Texte gris moyen */
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: white;
+  color: #ff6600; /* Texte orange au survol */
+  border-color: #ff6600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Barre de Recherche */
+.search-wrapper {
+  display: flex;
+  /* Ombre douce et légère */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.categories-select {
+  padding: 12px;
+  /* Fond gris très clair */
+  background-color: #f8fafc; 
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  min-width: 150px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px;
+  /* Fond Blanc */
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-left: 1px solid #e2e8f0;
+  border-right: none;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #94a3b8; /* Placeholder gris clair */
+}
+
+.search-btn {
+  /* Orange (On garde pour le contraste) */
+  background: linear-gradient(90deg, #ff6600, #ff4500);
+  border: none;
+  color: white;
+  padding: 0 30px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(90deg, #e65c00, #e63e00);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+/* Panier (Cart) */
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #64748b; /* Gris moyen */
+  transition: color 0.3s;
+}
+
+.cart-link:hover {
+  color: #ff6600; /* Orange au survol */
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-icon-wrapper i {
+  font-size: 24px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff6600;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(255, 102, 0, 0.2);
+}
+
+.cart-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.cart-price {
+  font-weight: bold;
+  color: #1e293b; /* Prix en foncé */
+}

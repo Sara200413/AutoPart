@@ -1,0 +1,126 @@
+/* Container Général */
+.cart-page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cart-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* Mhimma bach maytjbbdch l'formulaire */
+}
+
+/* --- PARTIE GAUCHE (Liste) --- */
+.cart-items-list {
+  flex: 2;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Dell khfif */
+  padding: 20px;
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-card:last-child {
+  border-bottom: none;
+}
+
+.cart-item-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain; /* Bach tban taswira kamla */
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+/* --- PARTIE DROITE (Formulaire Modern) --- */
+.checkout-form-section {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Dell akber chwiya */
+  position: sticky;
+  top: 20px; /* Bach yb9a tab3k ila hbti */
+}
+
+.checkout-form-section h2 {
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+  color: #1e293b;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* Inputs Wa3rin */
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+/* Effect mlli tkliki wst l'input */
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  border-color: #166534; /* Vert */
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.1); /* Glow khder */
+}
+
+.btn-commander {
+  width: 100%;
+  background: linear-gradient(135deg, #166534 0%, #14532d 100%); /* Degradé */
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(22, 101, 52, 0.2);
+}
+
+.btn-commander:hover {
+  transform: translateY(-2px); /* Kaytle3 chwiya */
+  box-shadow: 0 6px 12px rgba(22, 101, 52, 0.3);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .cart-content {
+    flex-direction: column;
+  }
+  .cart-items-list, .checkout-form-section {
+    width: 100%;
+  }
+}

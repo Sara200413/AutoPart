@@ -1,0 +1,22 @@
+.top-bar {
+  background-color: #141414; 
+  color: #b0bec5; 
+  padding: 10px 0;
+  font-size: 13px; 
+  border-bottom: 1px solid #222; 
+}
+.top-bar a {
+  color: #b0bec5;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.top-bar a:hover {
+  color: white; 
+}
+.top-bar .phone {
+  color: #ff6600; 
+  margin-left: 5px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 102, 0, 0.3); 
+}

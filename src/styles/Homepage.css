@@ -1,0 +1,593 @@
+:root {
+  --bg-main: #f8fafc;      /* Gris très très clair (presque blanc) */
+  --bg-card: #ffffff;      /* Blanc pur pour les cartes */
+  --bg-input: #ffffff;     /* Blanc pour les inputs */
+  --border-light: #e2e8f0;
+  --text-dark: #1e293b;    /* Bleu nuit très foncé (pour titres) */
+  --text-body: #475569;    /* Gris moyen (pour paragraphes) */
+  --text-light: #94a3b8;   /* Gris clair (pour détails) */
+  --accent-orange: #ff6600;
+  --accent-glow: rgba(255, 102, 0, 0.15);
+}
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*CONTAINER*/
+.homepage {
+  background-color: var(--bg-main);
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.homepage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homepage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+/*  SEARCH BOX (Carte Blanche) */
+.search-box {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-light);
+}
+
+/* Logo dans la boite */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--accent-orange), #ff8533);
+  padding: 10px;
+  border-radius: 12px;
+  color: white;
+  width: 34px;
+  height: 34px;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.logo-text {
+  margin-left: 12px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark); /* Texte foncé */
+}
+
+.search-title {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.search-subtitle {
+  color: var(--text-body);
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Inputs (Champs) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-body);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border-light); /* Bordure grise claire */
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--bg-input);
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+/* Bouton Rechercher (Orange) */
+.search-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: #e2e8f0;
+  color: #94a3b8;
+}
+
+.search-button.active {
+  background: linear-gradient(90deg, var(--accent-orange), #ff4500);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.search-button.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+/* Tags */
+.selection-tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+/* Couleurs des tags sur fond blanc */
+.tag-blue { background: #eff6ff; color: #3b82f6; }
+.tag-green { background: #f0fdf4; color: #22c55e; }
+.tag-orange { background: #fff7ed; color: var(--accent-orange); border: 1px solid rgba(255,102,0,0.2); }
+
+
+/* --- HERO IMAGE --- */
+.hero-image-container {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 500px;
+  /* Ombre pour détacher l'image du fond blanc */
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badges-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+.badge-red { background: #ef4444; color: white; }
+.badge-white { background: rgba(255, 255, 255, 0.9); color: #1e293b; }
+
+.hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: white;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+.hero-title span { color: var(--accent-orange); }
+
+.hero-description {
+  color: #f1f5f9;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  max-width: 90%;
+}
+
+.hero-button {
+  background: white;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.hero-button:hover { background: var(--accent-orange); color: white; }
+
+/* --- FEATURES (Icônes bas) --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: var(--accent-orange);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: #fff7ed; /* Fond orange très pâle */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+}
+
+.feature-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+.feature-desc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* --- WHATSAPP --- */
+.whatsapp-container {
+  position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+}
+.whatsapp-button {
+  background: #25D366;
+  border: none; border-radius: 50px; padding: 12px 24px;
+  display: flex; align-items: center; gap: 12px; cursor: pointer;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  color: white;
+}
+.whatsapp-text-main { font-weight: bold; font-size: 1rem; }
+.whatsapp-text-small { font-size: 0.7rem; }
+.whatsapp-icon-container svg { width: 24px; height: 24px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .homepage-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+}
+/* =========================================
+   PARTIE 2 : SECTIONS DU BAS (Clean Theme)
+   (Colle ça à la fin de Homepage.css)
+   ========================================= */
+
+/* --- SECTION INFO (Carte d'Identité) --- */
+.info-section {
+  background: var(--bg-card); /* Blanc */
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05); /* Ombre douce */
+}
+
+/* Gauche */
+.info-header-line {
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent-orange);
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.info-title {
+  color: var(--text-dark); /* Bleu nuit foncé */
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.info-subtitle {
+  color: var(--text-light); /* Gris clair */
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.info-tags span {
+  background-color: #f1f5f9; /* Gris très très clair */
+  border: 1px solid var(--border-light);
+  color: var(--text-body);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.info-description {
+  color: var(--text-body); /* Gris moyen */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.info-description strong {
+  color: var(--text-dark); /* Foncé pour le gras */
+}
+
+.info-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-light);
+}
+
+.info-footer h4 {
+  color: var(--accent-orange);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.info-footer p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Droite (Stats) */
+.info-stats {
+  border-left: 1px solid var(--border-light);
+  padding-left: 40px;
+}
+
+.stats-title {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.stat-item {
+  margin-bottom: 30px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--accent-orange);
+  margin-bottom: 5px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+
+/* --- SECTION CATEGORIES (Les 4 Familles) --- */
+.categories-section {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-light);
+}
+
+/* Header */
+.categories-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.yellow-pill {
+  background-color: #fff7ed; /* Fond orange très pâle */
+  color: var(--accent-orange);
+  border: 1px solid rgba(255,102,0,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.cat-title {
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.cat-desc-text {
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.cat-side-title {
+  color: var(--text-light);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.cat-side-text p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.cat-item:hover {
+  background-color: #f8fafc; /* Gris très léger au survol */
+}
+
+.cat-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--accent-orange);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.cat-content h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.cat-content p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Mobile Fixes */
+@media (max-width: 900px) {
+  .info-section { grid-template-columns: 1fr; }
+  .info-stats { border-left: none; border-top: 1px solid var(--border-light); padding-left: 0; padding-top: 30px; }
+  .info-footer { grid-template-columns: 1fr; }
+  
+  .categories-header { grid-template-columns: 1fr; gap: 20px; }
+  .categories-grid { grid-template-columns: 1fr; }
+  .cat-item { flex-direction: row; align-items: flex-start; gap: 15px; }
+}
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre kolchi */
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Animation mli katji fo9ha */
+}
+
+.feature-icon {
+  margin-bottom: 15px;
+  /* Ila bghiti circle background wra l'icone zid hadchi: */
+  background: #f0fdf4; /* Vert fate7 bzaf */
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #1e293b;
+}
+
+.feature-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+}

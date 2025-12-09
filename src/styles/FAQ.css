@@ -1,0 +1,128 @@
+.faq-page-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-header h1 {
+  color: #1e293b;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.faq-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+/* Liste des Questions */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+  overflow: hidden; /* Mhimma bach l'answer mlli tban matkhrejch */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Question (Barre Visible) */
+.faq-question {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.faq-question h3 {
+  font-size: 1.1rem;
+  color: #334155;
+  margin: 0;
+  font-weight: 600;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #ff6600; /* Orange */
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Réponse (Mkhbbiya par défaut) */
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 25px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease-in-out;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* --- ETAT ACTIVE (Mlli tkliki) --- */
+.faq-item.active {
+  border-color: #ff6600;
+}
+
+.faq-item.active .faq-question {
+  background-color: #fff7ed; /* Orange fate7 bzaf */
+}
+
+.faq-item.active .faq-question h3 {
+  color: #ff6600;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Kankbbro l'toul bach tban */
+  opacity: 1;
+  padding: 20px 25px; /* Kanrjj3o l'padding */
+  border-top: 1px solid #fed7aa;
+}
+
+/* Banner Contact */
+.faq-contact-banner {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  background: #1e293b;
+  border-radius: 15px;
+  color: white;
+}
+
+.faq-contact-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-contact {
+  background: #ff6600;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-contact:hover {
+  background: #e65c00;
+}
